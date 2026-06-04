@@ -1,0 +1,157 @@
+/* Containerul principal pe tot ecranul */
+.heroSection {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10%; 
+  width: 100vw;
+  height: 100vh;
+  padding: 0 5%;
+  background: linear-gradient(-45deg, #050505, #1a000d, #2d0016, #4d0026);
+  background-size: 400% 400%;
+  animation: liquidGradient 12s ease infinite;
+  color: #ffffff;
+}
+
+@keyframes liquidGradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Poza */
+.heroImageContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.profilePic {
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center bottom;
+  filter: grayscale(100%);
+  box-shadow: 0 0 50px rgba(255, 20, 147, 0.3);
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.profilePic:hover {
+  transform: scale(1.02);
+  filter: grayscale(30%);
+}
+
+/* Textul din dreapta */
+.heroText {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  max-width: 600px; 
+}
+
+.subtitle {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #ff66b2;
+  letter-spacing: 3px;
+  margin-bottom: 1rem;
+}
+
+.heroText h1 {
+  font-size: 4rem;
+  margin-bottom: 1.5rem;
+  font-family: 'Courier New', Courier, monospace;
+  display: flex;
+  align-items: center;
+  white-space: nowrap; 
+}
+
+.typewriterText {
+  color: #ffffff;
+}
+
+.cursor {
+  color: #ff1493;
+  font-weight: bold;
+  animation: blink 1s step-end infinite;
+  margin-left: 5px;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.description {
+  font-size: 1.25rem;
+  color: #cccccc;
+  line-height: 1.6;
+  margin-bottom: 2.5rem;
+}
+
+.ctaButton {
+  background-color: transparent;
+  color: #ffb3d9;
+  border: 2px solid #ff1493;
+  padding: 1rem 2.5rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.ctaButton:hover {
+  background-color: rgb(255, 20, 147);
+  color: #ffffff;
+  box-shadow: 0 0 20px rgba(255, 20, 147, 0.6);
+}
+
+/* Pentru ecrane mai mici / laptopuri mici */
+@media (max-width: 1200px) {
+  .heroText h1 { font-size: 3rem; }
+  .profilePic { width: 300px; height: 300px; }
+}
+
+/* Pentru telefoane */
+@media (max-width: 900px) {
+  .heroSection {
+    flex-direction: column;
+    text-align: center;
+    gap: 2rem;
+  }
+  .heroText {
+    align-items: center;
+    padding-left: 0;
+  }
+  .heroText h1 { white-space: normal; font-size: 2.5rem; }
+}
+
+.imageWrapper {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  position: relative;
+}
+
+.projectPreviewIframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  pointer-events: none; /* Asta previne interacțiunea cu site-ul din interior */
+  transform: scale(0.2); /* Micșorăm site-ul pentru a "încăpea" în card */
+  transform-origin: top left;
+  width: 200%; /* Compensăm scalarea */
+  height: 200%;
+}
+
+.iframeOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}

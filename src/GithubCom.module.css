@@ -1,0 +1,112 @@
+.container {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #120009;
+    border: 1px solid #33001a;
+    border-radius: 20px;
+    padding: 1.5rem;
+    color: #ffffff;
+    box-shadow: 0 8px 32px rgba(255, 20, 147, 0.05);
+    max-height: 400px; /*containerul se opreste la 400px, apoi devine scrollabil*/
+    overflow-y: auto;
+}
+
+.container::-webkit-scrollbar { width: 8px; }
+.container::-webkit-scrollbar-track { background: #050505; border-radius: 10px; }
+.container::-webkit-scrollbar-thumb { background: #33001a; border-radius: 10px; }
+.container::-webkit-scrollbar-thumb:hover { background: #ff1493; }
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #33001a;
+    margin-bottom: 1.5rem;
+}
+
+.header h3 {
+    margin: 0;
+    color: #ff1493;
+    font-size: 1.4rem;
+}
+
+.viewAllLink { /*butonul de view all commits*/
+    color: #ffb3d9;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: bold;
+    padding: 6px 12px;
+    border: 1px solid #ff1493;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+
+.viewAllLink:hover {
+    background-color: #ff1493;
+    color: #ffffff;
+}
+
+.commitList {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.statusMessage {
+    text-align: center;
+    padding: 2rem;
+    color: #aaaaaa;
+}
+
+.errorText {
+    color: #ff4d4d;
+    font-weight: bold;
+}
+
+.commitItem {
+    padding: 10px 12px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #33001a;
+    padding-bottom: 10px;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.commitItem:hover {
+    background-color: #1a000d;
+    transform: translateX(5px);
+}
+
+.commitMessage {
+    display: block;
+    font-weight: bold;
+    color: #ffb3d9;
+    text-decoration: none;
+    margin-bottom: 5px;
+    transition: color 0.2s ease;
+}
+
+.commitMessage:hover {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+.commitMeta { /*data commitului, numele repo-ului, etc*/
+    display: flex;
+    align-items: center;
+    font-size: 0.85rem;
+    color: #aaaaaa;
+    margin-top: 5px;
+}
+
+.repoBadge {/*badge-ul care arata numele repo-ului*/
+    background: #33001a;
+    color: #ff1493;
+    padding: 2px 6px;
+    border-radius: 4px;
+    margin-right: 8px;
+    font-size: 0.75rem;
+    border: 1px solid #ff1493;
+}
